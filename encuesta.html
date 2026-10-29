@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de hábitos de energía</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Encuesta de hábitos de energía</h1>
+        <p>Cuéntenos cómo usa la energía su familia. Los campos con * son obligatorios.</p>
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta de hábitos</a>
+        </nav>
+    </header>
+
+    <main>
+        <form action="encuesta.html" method="get">
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Datos de la familia</legend>
+
+                <p>
+                    <label for="nombre">Nombre *</label>
+                    <input class="form-control" type="text" id="nombre" name="nombre" required>
+                </p>
+
+                <p>
+                    <label for="correo">Correo electrónico *</label>
+                    <input class="form-control" type="email" id="correo" name="correo" required>
+                </p>
+
+                <p>
+                    <label for="personas">Personas que viven en la casa *</label>
+                    <input class="form-control" type="number" id="personas" name="personas" min="1" max="20" required>
+                </p>
+
+                <p>
+                    <label for="estrato">Estrato *</label>
+                    <select class="form-select" id="estrato" name="estrato" required>
+                        <option value="">Seleccione...</option>
+                        <option value="1">Estrato 1</option>
+                        <option value="2">Estrato 2</option>
+                        <option value="3">Estrato 3</option>
+                        <option value="4">Estrato 4</option>
+                        <option value="5">Estrato 5</option>
+                        <option value="6">Estrato 6</option>
+                    </select>
+                </p>
+            </fieldset>
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Hábitos de consumo</legend>
+
+                <p>
+                    <label for="tv">Horas al día con el televisor encendido</label>
+                    <input class="form-range" type="range" id="tv" name="tv" min="0" max="12" value="3">
+                </p>
+
+                <p>¿Con qué cocina principalmente? *</p>
+                <input type="radio" id="gas-natural" name="cocina" value="gas_natural" required>
+                <label for="gas-natural">Gas natural</label>
+                <input type="radio" id="gas-propano" name="cocina" value="gas_propano">
+                <label for="gas-propano">Gas propano (pipeta)</label>
+                <input type="radio" id="electrica" name="cocina" value="electrica">
+                <label for="electrica">Estufa eléctrica</label>
+
+                <p>¿Qué hace para ahorrar energía?</p>
+                <input type="checkbox" id="apaga-luces" name="ahorro" value="luces">
+                <label for="apaga-luces">Apaga las luces al salir</label><br>
+                <input type="checkbox" id="desconecta" name="ahorro" value="desconectar">
+                <label for="desconecta">Desconecta los equipos que no usa</label><br>
+                <input type="checkbox" id="led" name="ahorro" value="led">
+                <label for="led">Usa bombillos LED</label>
+
+                <p class="mt-3">
+                    <label for="consumo">Consumo mensual de su factura (kWh)</label>
+                    <input class="form-control" type="number" id="consumo" name="consumo" min="0" max="2000">
+                </p>
+            </fieldset>
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Comentarios</legend>
+                <p>
+                    <label for="comentarios">¿Qué podría cambiar su familia para gastar menos energía?</label><textarea class="form-control" id="comentarios" name="comentarios" rows="3" cols="40"></textarea>
+                </p>
+            </fieldset>
+
+            <button class="btn btn-primary" type="submit">Enviar</button>
+            <button class="btn btn-secondary" type="reset">Borrar</button>
+        </form>
+    </main>
+
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>
